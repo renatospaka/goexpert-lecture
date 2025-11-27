@@ -4,7 +4,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/renatospaka/library/pkg/entity"
+	"github.com/renatospaka/lecture/pkg/entity"
 )
 
 var (

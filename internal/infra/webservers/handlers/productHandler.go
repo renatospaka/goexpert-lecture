@@ -6,10 +6,10 @@ import (
 	"strconv"
 
 	"github.com/go-chi/chi"
-	"github.com/renatospaka/library/internal/dto"
-	"github.com/renatospaka/library/internal/entity"
-	"github.com/renatospaka/library/internal/infra/database"
-	entityPkg "github.com/renatospaka/library/pkg/entity"
+	"github.com/renatospaka/lecture/internal/dto"
+	"github.com/renatospaka/lecture/internal/entity"
+	"github.com/renatospaka/lecture/internal/infra/database"
+	entityPkg "github.com/renatospaka/lecture/pkg/entity"
 )
 
 type ProductHandler struct {
@@ -46,7 +46,6 @@ func (ph *ProductHandler) CreateProduct(w http.ResponseWriter, r *http.Request) 
 	w.WriteHeader(http.StatusCreated)
 }
 
-
 func (ph *ProductHandler) GetProduct(w http.ResponseWriter, r *http.Request) {
 	id := chi.URLParam(r, "id")
 	if id == "" {
@@ -65,12 +64,11 @@ func (ph *ProductHandler) GetProduct(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(product)
 }
 
-
 func (ph *ProductHandler) GetProducts(w http.ResponseWriter, r *http.Request) {
 	page := r.URL.Query().Get("page")
 	limit := r.URL.Query().Get("limit")
 	sort := r.URL.Query().Get("sort")
-	
+
 	pageInt, err := strconv.Atoi(page)
 	if err != nil {
 		pageInt = 0
@@ -91,7 +89,6 @@ func (ph *ProductHandler) GetProducts(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(products)
 }
-
 
 func (ph *ProductHandler) UpdateProduct(w http.ResponseWriter, r *http.Request) {
 	id := chi.URLParam(r, "id")
@@ -126,7 +123,6 @@ func (ph *ProductHandler) UpdateProduct(w http.ResponseWriter, r *http.Request) 
 	}
 	w.WriteHeader(http.StatusOK)
 }
-
 
 func (ph *ProductHandler) DeleteProduct(w http.ResponseWriter, r *http.Request) {
 	id := chi.URLParam(r, "id")

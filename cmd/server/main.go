@@ -7,10 +7,10 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/jwtauth"
-	"github.com/renatospaka/library/configs"
-	"github.com/renatospaka/library/internal/entity"
-	"github.com/renatospaka/library/internal/infra/database"
-	"github.com/renatospaka/library/internal/infra/webservers/handlers"
+	"github.com/renatospaka/lecture/configs"
+	"github.com/renatospaka/lecture/internal/entity"
+	"github.com/renatospaka/lecture/internal/infra/database"
+	"github.com/renatospaka/lecture/internal/infra/webservers/handlers"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
@@ -33,7 +33,7 @@ func main() {
 	r.Use(middleware.Recoverer)
 	r.Use(middleware.WithValue("jwt", configs.TokenAuth))
 	r.Use(middleware.WithValue("JWTExpiresIn", configs.JWTExpiresIn))
-	
+
 	userDB := database.NewUser(db)
 	UserHandler := handlers.NewUserHandler(userDB)
 	r.Post("/users", UserHandler.Create)
@@ -49,7 +49,7 @@ func main() {
 		r.Get("/", ProductHandler.GetProducts)
 		r.Get("/{id}", ProductHandler.GetProduct)
 		r.Put("/{id}", ProductHandler.UpdateProduct)
-		r.Delete("/{id}", ProductHandler.DeleteProduct)		
+		r.Delete("/{id}", ProductHandler.DeleteProduct)
 	})
 
 	log.Println("servidor escutando porta:", 8000)

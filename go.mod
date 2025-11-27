@@ -1,6 +1,6 @@
-module github.com/renatospaka/library
+module github.com/renatospaka/lecture
 
-go 1.20
+go 1.25.4
 
 require (
 	github.com/go-chi/chi v1.5.1

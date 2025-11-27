@@ -36,8 +36,9 @@ func LoadConfig(path string) (*conf, error) {
 		return nil, err
 	}
 
-	log.Println("JWTSecret", cfg.JWTSecret)
-
 	cfg.TokenAuth = jwtauth.New("HS256", []byte(cfg.JWTSecret), nil)
+	log.Println("JWTSecret", cfg.JWTSecret)
+	// _, tokenAuth, _ := cfg.TokenAuth.Encode(map[string]interface{}{"exp": cfg.JWTExpiresIn})
+	// log.Println("TokenAuth", tokenAuth)
 	return cfg, nil
 }

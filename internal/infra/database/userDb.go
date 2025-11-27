@@ -1,7 +1,7 @@
 package database
 
 import (
-	"github.com/renatospaka/library/internal/entity"
+	"github.com/renatospaka/lecture/internal/entity"
 	"gorm.io/gorm"
 )
 

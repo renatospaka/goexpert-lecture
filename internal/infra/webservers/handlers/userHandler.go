@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/go-chi/jwtauth"
-	"github.com/renatospaka/library/internal/dto"
-	"github.com/renatospaka/library/internal/entity"
-	"github.com/renatospaka/library/internal/infra/database"
+	"github.com/renatospaka/lecture/internal/dto"
+	"github.com/renatospaka/lecture/internal/entity"
+	"github.com/renatospaka/lecture/internal/infra/database"
 )
 
 type UserHandler struct {

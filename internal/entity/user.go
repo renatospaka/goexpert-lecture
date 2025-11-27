@@ -1,7 +1,7 @@
 package entity
 
 import (
-	"github.com/renatospaka/library/pkg/entity"
+	"github.com/renatospaka/lecture/pkg/entity"
 	"golang.org/x/crypto/bcrypt"
 )
 

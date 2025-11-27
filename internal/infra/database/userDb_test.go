@@ -3,7 +3,7 @@ package database
 import (
 	"testing"
 
-	"github.com/renatospaka/library/internal/entity"
+	"github.com/renatospaka/lecture/internal/entity"
 	"github.com/stretchr/testify/assert"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"

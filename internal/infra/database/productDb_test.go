@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/renatospaka/library/internal/entity"
+	"github.com/renatospaka/lecture/internal/entity"
 	"github.com/stretchr/testify/assert"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
@@ -35,7 +35,7 @@ func TestFinadAllProducts(t *testing.T) {
 
 	db.AutoMigrate(&entity.Product{})
 	for i := 1; i < 24; i++ {
-		product, err := entity.NewProduct(fmt.Sprintf("Product %d", i), rand.Float64() * 100)
+		product, err := entity.NewProduct(fmt.Sprintf("Product %d", i), rand.Float64()*100)
 		assert.NoError(t, err)
 		db.Create(product)
 	}
@@ -92,7 +92,7 @@ func TestUpdate(t *testing.T) {
 	product.Name = "Product 2"
 	err = productDB.Update(product)
 	assert.NoError(t, err)
-	
+
 	product, err = productDB.FindByID(product.ID.String())
 	assert.NoError(t, err)
 	assert.Equal(t, "Product 2", product.Name)

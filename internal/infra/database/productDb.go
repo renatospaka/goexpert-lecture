@@ -1,7 +1,7 @@
 package database
 
 import (
-	"github.com/renatospaka/library/internal/entity"
+	"github.com/renatospaka/lecture/internal/entity"
 	"gorm.io/gorm"
 )
 
@@ -21,12 +21,12 @@ func (p *Product) FindAll(page, limit int, sort string) ([]entity.Product, error
 	if sort != "" && sort != "asc" && sort != "desc" {
 		sort = "asc"
 	}
-	
+
 	var products []entity.Product
 	var err error
 	if page != 0 && limit != 0 {
 		err = p.DB.Limit(limit).Offset((page - 1) * limit).Order("created_at " + sort).Find(&products).Error
-		} else {
+	} else {
 		err = p.DB.Order("created_at " + sort).Find(&products).Error
 	}
 	return products, err
