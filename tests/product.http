@@ -1,22 +1,23 @@
 POST http://localhost:8000/products HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjQ4NTY2NzgsInN1YiI6ImI3Njc1OWIyLWI5ZmQtNDFiNS05OGQyLWQ3OTZlNTMzM2ZlNiJ9.y2OO3ZH7JBbbC896uCI3163S1TIK_r3YUvs8fVcTVhk
 Content-Type: application/json
 
 {
-  "name": "Meu Producto",
+  "name": "Meu Produto",
   "price": 100
 }
 
 ###
 GET http://localhost:8000/products HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODU5NzYyODIsInN1YiI6IjJiOWI3ZWEyLWVhOTAtNDVjMC05ODFhLTIyODY0MjgwNTFiYiJ9.BsusvMLbe-FCnI-Ue3bgq4oQNnxMVstGW7O1z4EAS3k
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjQ4NTY2NzgsInN1YiI6ImI3Njc1OWIyLWI5ZmQtNDFiNS05OGQyLWQ3OTZlNTMzM2ZlNiJ9.y2OO3ZH7JBbbC896uCI3163S1TIK_r3YUvs8fVcTVhk
 
 ###
-GET http://localhost:8000/products/200b72ec-cccf-4ca7-8368-e48d1912179b HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODU5NzYyODIsInN1YiI6IjJiOWI3ZWEyLWVhOTAtNDVjMC05ODFhLTIyODY0MjgwNTFiYiJ9.BsusvMLbe-FCnI-Ue3bgq4oQNnxMVstGW7O1z4EAS3k
+GET http://localhost:8000/products/24b35f4c-9831-4992-bcec-0b0d47221130 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjQ4NTY2NzgsInN1YiI6ImI3Njc1OWIyLWI5ZmQtNDFiNS05OGQyLWQ3OTZlNTMzM2ZlNiJ9.y2OO3ZH7JBbbC896uCI3163S1TIK_r3YUvs8fVcTVhk
 
 ###
-PUT http://localhost:8000/products/200b72ec-cccf-4ca7-8368-e48d1912179b HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODU5NzYyODIsInN1YiI6IjJiOWI3ZWEyLWVhOTAtNDVjMC05ODFhLTIyODY0MjgwNTFiYiJ9.BsusvMLbe-FCnI-Ue3bgq4oQNnxMVstGW7O1z4EAS3k
+PUT http://localhost:8000/products/24b35f4c-9831-4992-bcec-0b0d47221130 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjQ4NTY2NzgsInN1YiI6ImI3Njc1OWIyLWI5ZmQtNDFiNS05OGQyLWQ3OTZlNTMzM2ZlNiJ9.y2OO3ZH7JBbbC896uCI3163S1TIK_r3YUvs8fVcTVhk
 Content-Type: application/json
 
 {
@@ -25,5 +26,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:8000/products/200b72ec-cccf-4ca7-8368-e48d1912179b HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODU5NzYyODIsInN1YiI6IjJiOWI3ZWEyLWVhOTAtNDVjMC05ODFhLTIyODY0MjgwNTFiYiJ9.BsusvMLbe-FCnI-Ue3bgq4oQNnxMVstGW7O1z4EAS3k
+DELETE  http://localhost:8000/products/24b35f4c-9831-4992-bcec-0b0d47221130 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjQ4NTY2NzgsInN1YiI6ImI3Njc1OWIyLWI5ZmQtNDFiNS05OGQyLWQ3OTZlNTMzM2ZlNiJ9.y2OO3ZH7JBbbC896uCI3163S1TIK_r3YUvs8fVcTVhk
